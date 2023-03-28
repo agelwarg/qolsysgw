@@ -232,6 +232,12 @@ class _QolsysSensorWithoutUpdates(object):
     pass
 
 
+class QolsysSensorDoorbell(QolsysSensor):
+    @classmethod
+    def from_json(cls, data, common=None):
+        return cls.from_json_subclass('Doorbell', data, common)
+
+
 class QolsysSensorDoorWindow(QolsysSensor):
     @classmethod
     def from_json(cls, data, common=None):

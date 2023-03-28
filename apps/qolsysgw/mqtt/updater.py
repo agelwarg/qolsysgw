@@ -12,6 +12,7 @@ from qolsys.sensors import QolsysSensor
 from qolsys.sensors import QolsysSensorAuxiliaryPendant
 from qolsys.sensors import QolsysSensorBluetooth
 from qolsys.sensors import QolsysSensorCODetector
+from qolsys.sensors import QolsysSensorDoorbell
 from qolsys.sensors import QolsysSensorDoorWindow
 from qolsys.sensors import QolsysSensorFreeze
 from qolsys.sensors import QolsysSensorGlassBreak
@@ -430,6 +431,7 @@ class MqttWrapperQolsysSensor(MqttWrapper):
     PAYLOAD_OFF = 'Closed'
 
     QOLSYS_TO_HA_DEVICE_CLASS = {
+        QolsysSensorDoorbell: 'door',
         QolsysSensorDoorWindow: 'door',
         QolsysSensorMotion: 'motion',
         QolsysSensorGlassBreak: 'vibration',
